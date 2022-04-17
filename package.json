@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "moment": "^2.29.2",
+    "mongoose": "^6.3.0",
+    "nodemon": "^2.0.15",
+    "uuid": "^8.3.2"
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-run": "nodemon mongodb"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
