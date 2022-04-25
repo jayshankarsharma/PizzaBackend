@@ -3,7 +3,8 @@ const logger=require('./middleware/logger');
 const path=require('path');
 const app=express();
 const mongoose=require('./mongodb.js');
-
+const cors=require('cors');
+app.use(cors());
 
 
 const PORT=process.env.PORT || 5000;

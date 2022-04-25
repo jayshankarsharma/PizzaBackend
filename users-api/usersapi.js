@@ -17,17 +17,20 @@ router.get("/:id", (req, res) => {
 
 //for user login
 router.post("/login", (req, res) => {
+  console.log('In Login Back end ');
   usermodel.findOne({ username: req.body.username }, (err, doc) => {
     if (doc) {
       
       if(req.body.password===doc.password)
       {
+       
           const test = {name:doc.name,username:doc.username,mobile:doc.mobile,address:doc.address,auth:true};
-          console.log(test);
+          console.log('In Login Back end '+test);
         res.status(200).send(test);
       }
       else{
         res.status(401).send({message:'Invalid credentials'});
+        console.log('Invalid credentials')
       }
      
     } else {
@@ -64,6 +67,7 @@ router.post("/", (req, res) => {
       res.status(500).send({ message: err });
     } else {
       res.status(200).send(doc);
+      console.log("User registered");
     }
   });
 });
