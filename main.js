@@ -23,4 +23,4 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use('/api/users', require('./users-api/usersapi'));
 // app.use('/api/pizzas', require('./pizza-Api/Pizzasapi'));
 // app.use('/api/carts', require('./cart-Api/cartsapi'));
-// app.use('/api/orders', require('./order-Api/ordersapi'));
+app.use('/api/orders', require('./order-Api/ordersapi'));
