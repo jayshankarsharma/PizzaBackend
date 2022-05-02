@@ -17,22 +17,23 @@ router.get("/:id", (req, res) => {
 
 //for user login
 router.post("/login", (req, res) => {
-  console.log('In Login Back end ');
+  console.log("In Login Back end ");
   usermodel.findOne({ username: req.body.username }, (err, doc) => {
     if (doc) {
-      
-      if(req.body.password===doc.password)
-      {
-       
-          const test = {name:doc.name,username:doc.username,mobile:doc.mobile,address:doc.address,auth:true};
-          console.log('In Login Back end '+test);
+      if (req.body.password === doc.password) {
+        const test = {
+          name: doc.name,
+          username: doc.username,
+          mobile: doc.mobile,
+          address: doc.address,
+          auth: true,
+        };
+        console.log("In Login Back end " + test);
         res.status(200).send(test);
+      } else {
+        res.status(401).send({ message: "Invalid credentials" });
+        console.log("Invalid credentials");
       }
-      else{
-        res.status(401).send({message:'Invalid credentials'});
-        console.log('Invalid credentials')
-      }
-     
     } else {
       console.log("User not  found " + err);
       res.status(401).send(err);
